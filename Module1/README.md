@@ -5,7 +5,7 @@ There you can find a couple of simple examples of analytical architecture soluti
 [Design Example 2](Module1/Analytical%20Solution%20Designs/Design%20Example%202.png) has been also built for one of pharmacutical organization. There we have at least four sources:
 
 1. Text files from a FTP server
-2. Web-pages - we use scrapping to catch new data from web-pages directly
+2. Web-pages - we use web parsing to catch new data from web-pages directly
 3. OpenStreetMaps (OSM) - we want to upload information about OSM polygons to use them on our Qlik maps
 4. Different csv files (usually some static dictionaries)
 
