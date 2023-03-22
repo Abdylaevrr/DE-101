@@ -4,7 +4,9 @@ There you can find a couple of simple examples of analytical architecture soluti
 
 [Design Example 2](Module1/Analytical%20Solution%20Designs/Design%20Example%202.png) has been also built for one of pharmacutical organization. There we have at least four sources:
 
-1. Text files from FTP server
+1. Text files from a FTP server
 2. Web-pages - we use scrapping to catch new data from web-pages directly
 3. OpenStreetMaps (OSM) - we want to upload information about OSM polygons to use them on our Qlik maps
-4. Different ad-hoc csv files (usually some static dictionaries)
+4. Different csv files (usually some static dictionaries)
+
+We have a separate Talend pipeline (they are orchestrated by Rundeck) for each source. Pipelines put data into Citus (distributed Postgres, we have two Postgres nodes within the project) column store tables. After that, a bussiness user can connect to these column store tables directly or to prepared data marts using any SQL editors, Qlik or Excel.
